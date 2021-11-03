@@ -7,12 +7,11 @@
 #include <string.h>
 #include <unistd.h> 
 
-// das ist ein test 2323234
 
 #define  SERVER_PORT 5432
 #define  MAX_LINE 256
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[]{
 	// FILE* fp;
 	struct hostent* hp;
 	struct sockaddr_in sin; // Adresse des Sockets
