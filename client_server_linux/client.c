@@ -7,6 +7,8 @@
 #include <string.h>
 #include <unistd.h> 
 
+// das ist ein test 2323234
+
 #define  SERVER_PORT 5432
 #define  MAX_LINE 256
 
