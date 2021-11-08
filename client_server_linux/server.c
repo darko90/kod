@@ -38,6 +38,7 @@ int main(){
 	/* Warte auf Verbindung*/
 	while(1){
 		if((new_s = accept(s, (struct sockaddr*)&sin, &len))>0){
+			// Das Handle des neuen Sockets ausgeben
 			printf("%i \n", new_s);
 			break;
 		}
