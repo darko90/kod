@@ -12,7 +12,7 @@
 #define  SERVER_PORT 5432
 #define  MAX_LINE 256
 
-int main(int argc, char* argv[]{
+int main(int argc, char* argv[]){
 	// FILE* fp;
 	struct hostent* hp;
 	struct sockaddr_in sin; // Adresse des Sockets
@@ -34,7 +34,8 @@ int main(int argc, char* argv[]{
 	if(!hp){
 		fprintf(stderr, "simplex-talk: unknown host: %s \n", host);
 		exit(1);
-*/	}
+	}
+*/
 	
 	/*Initialisiere die Datenstruktur fuer die Adresse */
 	// bzero((char*)&sin, sizeof(sin)); --> DEPRECIATED
