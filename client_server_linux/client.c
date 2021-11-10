@@ -3,6 +3,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <arpa/inet.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h> 
@@ -20,20 +21,20 @@ int main(int argc, char* argv[]{
 	int s;
 	int len;
 
-
+/*
 	if(argc == 2){
 		host = argv[1];		
 	}else{
 		fprintf(stderr, "usage: simplex-talk host\n");
 		exit(1);
 	}
-	
+*/	
 	/* Uebersetze Host-Name in IP-Adresse des Partners*/
-	hp = gethostbyname(host);
+/*	hp = gethostbyname(host);
 	if(!hp){
 		fprintf(stderr, "simplex-talk: unknown host: %s \n", host);
 		exit(1);
-	}
+*/	}
 	
 	/*Initialisiere die Datenstruktur fuer die Adresse */
 	// bzero((char*)&sin, sizeof(sin)); --> DEPRECIATED
@@ -41,7 +42,10 @@ int main(int argc, char* argv[]{
 	sin.sin_family = AF_INET;
 	// bcopy(hp->h_addr, (char*)&sin.sin_addr, hp->h_length); --> DEPRECIATED
 	// Kopiere den Inhalt von h_addr nach sin_addr
-	memcpy((char*)&sin.sin_addr, hp->h_addr, hp->h_length);
+//	memcpy((char*)&sin.sin_addr, hp->h_addr, hp->h_length);
+
+	inet_aton(argv[1], &sin.sin_addr);
+
 	sin.sin_port = htons(SERVER_PORT); 
 	
 	/*Aktives Oeffnen  */
