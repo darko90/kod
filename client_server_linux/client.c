@@ -71,7 +71,6 @@ int main(int argc, char* argv[]){
 			 fputs(buf, stdout);
 		}
 	}
-	
 	 
 	return 0;
 }

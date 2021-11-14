@@ -1,0 +1,2 @@
+module ping_pong {
+}
